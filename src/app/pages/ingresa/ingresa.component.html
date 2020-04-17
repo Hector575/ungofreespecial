@@ -1,0 +1,290 @@
+<nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+  <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Set99</a>
+  </nav>
+<div class="container mt-5">
+<h4>Danos mas detalles <small> ... </small></h4>
+<hr>
+<form autocomplete="off" (ngSubmit)="continuar( forma )" #forma="ngForm">
+
+  <div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label class="inputEmail4">Nombre</label>
+        <input class="form-control"
+        type="text"
+        name="nombre"
+        [class.is-invalid]="nombre.invalid && nombre.touched"
+        [ngModel]="usuario.nombre"
+        placeholder="Nombre"
+        required
+        minlength="3"
+        #nombre="ngModel">
+ <small *ngIf="nombre.invalid && nombre.touched"
+        class="form-text text-danger">Ingrese su nombre correcto</small>
+
+      </div>
+      
+    
+      <div class="col-md-3 mb-3">
+        <label for="inputPassword4">Calle</label>
+        <input class="form-control"
+               type="text"
+               placeholder="Calle"
+               name="direccion"
+               [class.is-invalid]="direccion.invalid && direccion.touched"
+               required
+               minlength="5"
+               [ngModel]= "usuario.direccion"
+               #direccion="ngModel">
+        <small *ngIf="direccion.invalid && direccion.touched"
+               class="form-text text-danger">Ingrese una direccion correcta</small>
+
+      </div>
+
+      <div class="col-md-3 mb-3">
+        <label for="validationCustomUsername">Codigo postal</label>
+          <input class="form-control"
+             type="text"
+             placeholder="Ejem.3700"
+             name="Codigo postal"
+             [class.is-invalid]="cp.invalid && cp.touched"
+             required
+             minlength="1"
+             [ngModel]=" usuario.cp"
+             #cp="ngModel">
+      <small *ngIf="numero_de_casa.invalid && numero_de_casa.touched"
+             class="form-text text-danger">Ingrese un codigo postal correcto</small>
+        </div>
+
+      
+    </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label class="inputEmail4">Apellidos</label>
+          <input class="form-control"
+          type="text"
+          name="Apellido"
+          [class.is-invalid]="apellido.invalid && apellido.touched"
+          [ngModel]="usuario.apellido"
+          placeholder="Apellidos"
+          required
+          minlength="3"
+          #apellido="ngModel">
+   <small *ngIf="apellido.invalid && apellido.touched"
+          class="form-text text-danger">Ingrese su apellido correcto</small>
+  
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label for="inputEmail4">Numero exterior</label>
+          <input class="form-control"
+               type="text"
+               placeholder="Numero"
+               name="numero"
+               [class.is-invalid]="numero_de_casa.invalid && numero_de_casa.touched"
+               required
+               minlength="1"
+               [ngModel]=" usuario.telefono"
+               #numero_de_casa="ngModel">
+        <small *ngIf="numero_de_casa.invalid && numero_de_casa.touched"
+               class="form-text text-danger">Ingrese su numero correcto</small>
+              </div>
+
+              <div class="col-md-3 mb-3">
+          <label for="validationCustomUsername">Numero interior</label>
+            <input class="form-control"
+               type="text"
+               placeholder="Numero"
+               name="numero"
+               required
+               minlength="1"
+               [ngModel]=" usuario.telefono"
+               #numero_de_casa="ngModel">
+        </div>
+
+        
+
+        
+            <div class="form-group col-md-6">
+              <label class="inputEmail4">Telefono</label>
+              <input class="form-control"
+              type="text"
+              name="Telefono"
+              [class.is-invalid]="telefono.invalid && telefono.touched"
+              [ngModel]="usuario.telefono"
+              placeholder="Telefono"
+              required
+              minlength="3"
+              #telefono="ngModel">
+       <small *ngIf="telefono.invalid && telefono.touched"
+              class="form-text text-danger">Ingrese su numero telefonico correcto</small>
+      
+            </div>
+
+            <div class="col-md-3 mb-3">
+              <label for="validationCustom04">Colonia</label>
+              <input class="form-control"
+                  type="text"
+                  name="Colonia"
+                  placeholder="Colonia"
+                  [class.is-invalid]="Colonia.invalid && Colonia.touched"
+                  [ngModel]="usuario.Colonia"
+                  required
+                  #Colonia="ngModel">
+                  <small *ngIf="Colonia.invalid && Colonia.touched"
+                   class="form-text text-danger">Ingrese una colonia valida</small>
+               </div>
+               
+  
+      
+               <div class="col-md-3 mb-3">
+                <label for="validationCustom05">Ciudad</label>
+                <input class="form-control"
+              type="text"
+              name="ciudad"
+              [class.is-invalid]="ciudad.invalid && ciudad.touched"
+              [ngModel]="usuario.ciudad"
+              placeholder="Ciudad"
+              required
+              minlength="3"
+              #ciudad="ngModel">
+       <small *ngIf="ciudad.invalid && ciudad.touched"
+              class="form-text text-danger">Ingrese una ciudad correcta</small>
+                <div class="invalid-feedback">
+                  Ingresa una ciudad correcta
+                </div>
+              </div>
+
+        
+
+      
+              <div class="form-group col-md-6">
+                <label class="inputEmail4">Correo electronico</label>
+                <input class="form-control"
+                type="text"
+                name="Correo"
+                [class.is-invalid]="correo.invalid && correo.touched"
+                [ngModel]="usuario.correo"
+                placeholder="Correo electronico"
+                required
+                minlength="3"
+                #correo="ngModel">
+         <small *ngIf="correo.invalid && correo.touched"
+                class="form-text text-danger">Ingrese su correo electronico correcto</small>
+        
+              </div>
+
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom04">Estado</label>
+          <input class="form-control"
+        type="text"
+        name="Estado"
+        [class.is-invalid]="Estado.invalid && Estado.touched"
+        [ngModel]="usuario.Estado"
+        placeholder="Estado"
+        required
+        minlength="3"
+        #Estado="ngModel">
+ <small *ngIf="Estado.invalid && Estado.touched"
+        class="form-text text-danger">Ingrese un Estado correcto</small>
+        </div>
+
+        <div class="col-md-3 mb-3">
+          <label for="validationCustom05">Pais</label>
+          <select class="form-control"
+          name="pais"
+          [disabled]="paises.length === 0"
+          [class.is-invalid]="pais.invalid && pais.touched"
+          [ngModel]="usuario.pais"
+          required
+          #pais="ngModel">
+    <option *ngFor="let pais of paises"
+            [value]="pais.codigo">
+      {{ pais.nombre }}
+    </option>
+  </select>
+        </div>
+      </div>
+
+
+      <form>
+        <div class="form-group">
+          <label for="exampleFormControlFile1"><h4>Ingresa foto de tu identificacion oficial</h4></label>
+          <input type="file" class="form-control-file" id="exampleFormControlFile1">
+        </div>
+      </form>
+
+
+
+      </div>
+   
+
+   
+   <h4>Danos algunos datos especificos <small> ... </small></h4>
+   <hr>
+
+   <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault01">Monto de venta especifico</label>
+      <input class="form-control"
+        type="text"
+        name="Venta"
+        [class.is-invalid]="venta.invalid && venta.touched"
+        [ngModel]="usuario.venta"
+        placeholder="Monto de venta"
+        required
+        minlength="3"
+        #venta="ngModel">
+ <small *ngIf="venta.invalid && venta.touched"
+        class="form-text text-danger">Ingrese un monto de venta correcto</small>
+    </div>
+
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Monto de renta especifico</label>
+      <input class="form-control"
+        type="text"
+        name="Renta"
+        [class.is-invalid]="renta.invalid && renta.touched"
+        [ngModel]="usuario.renta"
+        placeholder="Monto de renta"
+        required
+        minlength="3"
+        #renta="ngModel">
+ <small *ngIf="renta.invalid && renta.touched"
+        class="form-text text-danger">Ingrese un monto de renta correcto</small>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="validationDefault02">Ingresa un area especifico</label>
+      <input class="form-control"
+        type="text"
+        name="Area"
+        [class.is-invalid]="area.invalid && area.touched"
+        [ngModel]="usuario.venta"
+        placeholder="Area"
+        required
+        minlength="3"
+        #area="ngModel">
+ <small *ngIf="area.invalid && area.touched"
+        class="form-text text-danger">Ingrese un area correcta</small>
+    </div>
+   </div>
+
+
+   
+  
+
+  
+ 
+  
+         
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8" >
+      <button type="submit"  class="btn btn-outline-primary btn-block">
+        Continuar
+      </button>
+    </div>
+  </div>
+
+
+
