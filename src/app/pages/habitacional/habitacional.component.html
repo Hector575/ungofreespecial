@@ -4,48 +4,115 @@
 <div class="container mt-5">
 <h4>Describe tu entorno <small> ... </small></h4>
 <hr>
-<form autocomplete="off" (ngSubmit)="guardar( forma )" #forma="ngForm">
+<form [formGroup]="HabitacionalForm" (ngSubmit)="onSaveForm()">
 
   <div>
 
 
- <div class="form-group row">
-  <label class="col-2 col-form-label"></label>
-  <div class="col-8">
-    <div class="container">
-      <div class="cuadro">
-        <h1 class="centrar"></h1>
-          <ul class="ks-cboxtags">
-              <!--Deje algunos seleccionados para que veas como fucniona (Checked)-->
-              <li><input type="checkbox" id="checkboxUno" name="Renta1" value="Renta" [ngModel]="usuario.Cinco_mil_renta"><label for="checkboxUno">5K renta</label></li>
-              <li><input type="checkbox" id="checkboxDos" name="Renta2" value="Renta" [ngModel]="usuario.Nueve_mil_renta"><label for="checkboxDos">9K renta</label></li>
-              <li><input type="checkbox" id="checkboxTres" name="Renta3" value="Renta" [ngModel]="usuario.treinta_mil_renta" ><label for="checkboxTres">30K renta</label></li>
-              <li><input type="checkbox" id="checkboxCuatro"name="Renta4" value="Renta" [ngModel]="usuario.setenta_mil_renta"><label for="checkboxCuatro">70K renta</label></li>
-              <li><input type="checkbox" id="checkboxCinco" name="Renta5" value="Renta" [ngModel]="usuario.punto_15_M_renta"><label for="checkboxCinco">.15M renta</label></li>
-              <li><input type="checkbox" id="checkboxSeis" name="Renta6" value="Renta" [ngModel]="usuario.punto_35_M_renta" ><label for="checkboxSeis">.35M renta</label></li>
-              <li><input type="checkbox" id="checkboxSiete" name="Renta7" value="Renta" [ngModel]="usuario.punto_70_M_renta"><label for="checkboxSiete">.70M renta</label></li>
-              <li><input type="checkbox" id="checkboxOcho" name="Renta8" value="Renta" [ngModel]="usuario.punto_9_M_mas_renta"><label for="checkboxOcho">.9M renta</label></li>
-              <li><input type="checkbox" id="checkboxNueve" name="Monedauno_MX" value="Monedauno" [ngModel]="usuario.Monedauno_MX" ><label for="checkboxNueve">$ MX</label></li>
-              <li><input type="checkbox" id="checkboxDiez" name="Monedados_US" value="Monedados" [ngModel]="usuario.Monedados_US"><label for="checkboxDiez">$ US</label></li>
-              <li><input type="checkbox" id="checkboxOnce" name="Monedatres_EURO" value="Monedatres" [ngModel]="usuario.Monedatres_Euro"><label for="checkboxOnce">$ €</label></li>
-              <li><input type="checkbox" id="checkboxventaUno" name="Venta1" value="Venta" [ngModel]="usuario.Venta_punto_5M"><label for="checkboxventaUno">.5 venta</label></li>
-              <li><input type="checkbox" id="checkboxventaDos" name="Venta2" value="Venta" [ngModel]="usuario.Venta_1_punto_1_M"><label for="checkboxventaDos">1.1M venta</label></li>
-              <li><input type="checkbox" id="checkboxventaTres" name="Venta3" value="Venta" [ngModel]="usuario.Venta_2_punto_5_M" ><label for="checkboxventaTres">2.5M venta</label></li>
-              <li><input type="checkbox" id="checkboxventaCuatro"name="Venta4" value="Venta" [ngModel]="usuario.Venta_6M"><label for="checkboxventaCuatro">6M venta</label></li>
-              <li><input type="checkbox" id="checkboxventaCinco" name="Venta5" value="Venta" [ngModel]="usuario.Venta_15M"><label for="checkboxventaCinco">15M venta</label></li>
-              <li><input type="checkbox" id="checkboxventaSeis" name="Venta6" value="Venta" [ngModel]="usuario.Venta_50M" ><label for="checkboxventaSeis">50M venta</label></li>
-              <li><input type="checkbox" id="checkboxventaSiete" name="Venta7" value="Venta" [ngModel]="usuario.Venta_150M"><label for="checkboxventaSiete">150M venta</label></li>
-              <li><input type="checkbox" id="checkboxventaOcho" name="Venta8" value="Venta" [ngModel]="usuario.Venta_500M"><label for="checkboxventaOcho">500M venta</label></li>
-              <li><input type="checkbox" id="checkboxventabañoUno" name="Baño1" value="Clasifica" [ngModel]="usuario.Banos_3"><label for="checkboxventabañoUno">3 baños</label></li>
-              <li><input type="checkbox" id="checkboxventabañoDos" name="Baño2" value="Clasifica" [ngModel]="usuario.Banos_5"><label for="checkboxventabañoDos">5 baños</label></li>
-              <li><input type="checkbox" id="checkboxventabañoTres" name="Baño3" value="Clasifica" [ngModel]="usuario.Banos_9_o_mas" ><label for="checkboxventabañoTres"> 9+ baños</label></li>
-              <li><input type="checkbox" id="checkboxventahabitacionCuatro"name="Habitacion1" value="Clasifica" [ngModel]="usuario.Habitaciones_3"><label for="checkboxventahabitacionCuatro">3 habitaciones</label></li>
-              <li><input type="checkbox" id="checkboxventahabitacionCinco" name="Habitacion2" value="Clasifica" [ngModel]="usuario.Habitaciones_5"><label for="checkboxventahanitacionCinco">5 habitaciones</label></li>
-              <li><input type="checkbox" id="checkboxventahabitacionSeis" name="Habitacion3" value="Clasifica" [ngModel]="usuario.Habitaciones_9_o_mas" ><label for="checkboxventahabitacionSeis">9+ habitaciones</label></li>
-            </ul>
-      </div>
-  </div>
+ 
 <hr>
+
+<div class="form-group col-md-6">
+  <label for="inputPassword4"><h6><strong>Monto de renta aprox.</strong></h6></label>
+    <select class="form-control"  formControlName="Renta" placeholder=" Renta">
+      <option>5k renta</option>
+      <option>9K Renta</option>
+      <option>30K Renta</option>
+      <option>70K Renta</option>
+      <option>.15M Renta</option>
+      <option>.35M Renta</option>
+      <option>.70M Renta</option>
+      <option>.9M+ Renta</option>
+    </select>
+    <div class="alert-danger" *ngIf="Renta.invalid && (Renta.dirty || Renta.touched)">
+      <div class="container-error-message" *ngIf="Renta.errors.required">
+        Selecciona un monto de renta
+      </div>
+      <div class="container-error-message" *ngIf="Renta.errors.minlength">
+        Selecciona un monto de renta
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group col-md-6">
+    <label for="inputPassword4"><h6><strong>Moneda que utilizas</strong></h6></label>
+      <select class="form-control"  formControlName="Moneda" placeholder=" Moneda">
+        <option>$ MX</option>
+         <option>$ US</option>
+         <option>€ Euro</option>
+        </select>
+    <div class="alert-danger" *ngIf="Moneda.invalid && (Moneda.dirty || Moneda.touched)">
+      <div class="container-error-message" *ngIf="Moneda.errors.required">
+            Selecciona tipo de moneda
+      </div>
+      <div class="container-error-message" *ngIf="Moneda.errors.minlength">
+        Selecciona tipo de moneda.
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group col-md-6">
+      <label for="inputPassword4"><h6><strong>Monto de venta aprox.</strong></h6></label>
+        <select class="form-control"  formControlName="Venta" placeholder=" Venta">
+          <option>.5M Venta</option>
+          <option>1.1M Venta</option>
+          <option>2.5M Venta</option>
+          <option>6M Venta</option>
+          <option>15M Venta</option>
+          <option>50M Venta</option>
+          <option>500M Venta</option>
+          <option>999M+ Venta</option>
+        </select>
+        <div class="alert-danger" *ngIf="Venta.invalid && (Venta.dirty || Venta.touched)">
+          <div class="container-error-message" *ngIf="Venta.errors.required">
+            Selecciona un monto de venta
+          </div>
+          <div class="container-error-message" *ngIf="Venta.errors.minlength">
+            Selecciona un monto de venta
+          </div>
+        </div>
+      </div>
+
+
+      <div class="form-group col-md-6">
+        <label for="inputPassword4"><h6><strong> Baños de la propiedad</strong></h6></label>
+          <select class="form-control"  formControlName="Banos" placeholder="Banos">
+            <option>3 Baños</option>
+             <option>5 Baños</option>
+             <option>9+ Baños</option>
+            </select>
+        <div class="alert-danger" *ngIf="Banos.invalid && (Banos.dirty || Banos.touched)">
+          <div class="container-error-message" *ngIf="Banos.errors.required">
+                Selecciona cuantos baños tiene tu propiedad
+          </div>
+          <div class="container-error-message" *ngIf="Banos.errors.minlength">
+            Selecciona cuantos baños tiene tu propiedad
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group col-md-6">
+          <label for="inputPassword4"><h6><strong>Habitaciones de la propiedad</strong></h6></label>
+            <select class="form-control"  formControlName="Habitaciones" placeholder=" Habitaciones">
+              <option>3 Habitaciones</option>
+               <option>5 Habitaciones</option>
+               <option>9+ Habitaciones</option>
+              </select>
+          <div class="alert-danger" *ngIf="Habitaciones.invalid && (Habitaciones.dirty || Habitaciones.touched)">
+            <div class="container-error-message" *ngIf="Habitaciones.errors.required">
+                  Selecciona cuantas habitaciones tiene su propiedad
+            </div>
+            <div class="container-error-message" *ngIf="Habitaciones.errors.minlength">
+              Selecciona cuantas habitaciones tiene su propiedad
+              </div>
+            </div>
+          </div>
+    
+
+
+    
+
 
 
 
@@ -54,7 +121,7 @@
 
 
  </div>
-</div>
+
  
     
     
@@ -65,11 +132,10 @@
   <div class="form-group row">
     <label class="col-2 col-form-label">&nbsp;</label>
     <div class="input-group col-md-8" >
-      <button type="submit"  class="btn btn-outline-primary btn-block">
-        Guardar
-      </button>
+      <button type="submit" class="btn btn-primary btn-lg btn-block" [disabled]="!HabitacionalForm.valid">
+        <button type="button" class="btn btn-primary btn-lg btn-block">Continuar</button></button>
     </div>
   </div>
 
-
+</form>
 </div>

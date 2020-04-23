@@ -8,8 +8,8 @@ import {HomeComponent} from './pages/home/home.component'
 import { AuthGuard } from './guards/auth.guard';
 import { InicioComponent } from './pages/inicio/inicio.component';
 import { ProductosComponent } from './pages/productos/productos.component';
-import { IngresaComponent } from './pages/ingresa/ingresa.component';
 import { HabitacionalComponent } from './pages/habitacional/habitacional.component';
+import { ContactComponent } from './pages/contact/contact.component';
 
 
 
@@ -20,7 +20,7 @@ const routes: Routes = [
   { path: 'registro', component: RegistroComponent },
   { path: 'login'   , component: LoginComponent },
   { path: 'inicio', component: InicioComponent},
-  { path: 'ingresa', component: IngresaComponent, canActivate: [ AuthGuard ]},
+  { path: 'contact', component: ContactComponent},
   { path: 'productos', component: ProductosComponent, canActivate: [ AuthGuard ]},
   { path: 'habitacional', component: HabitacionalComponent}, 
   
