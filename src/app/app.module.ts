@@ -7,6 +7,9 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { DataService } from './../app/services/data-db.service';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
+
+
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +23,9 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { ProductosComponent} from './pages/productos/productos.component';
 import { HabitacionalComponent } from './pages/habitacional/habitacional.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { PdfComponent } from './pages/pdf/pdf.component';
+
+
 
 
 
@@ -36,6 +42,7 @@ import { ContactComponent } from './pages/contact/contact.component';
     ProductosComponent,
     HabitacionalComponent,
     ContactComponent,
+    PdfComponent,
 
     
   ],
@@ -46,7 +53,9 @@ import { ContactComponent } from './pages/contact/contact.component';
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgMultiSelectDropDownModule.forRoot(),
+
 
     ],
   providers: [ DataService ],

@@ -10,6 +10,7 @@ import { InicioComponent } from './pages/inicio/inicio.component';
 import { ProductosComponent } from './pages/productos/productos.component';
 import { HabitacionalComponent } from './pages/habitacional/habitacional.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { PdfComponent } from './pages/pdf/pdf.component'
 
 
 
@@ -17,6 +18,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 
 const routes: Routes = [
   { path: 'home'    , component: HomeComponent, canActivate: [ AuthGuard ] },
+  { path: 'pdf', component: PdfComponent },
   { path: 'registro', component: RegistroComponent },
   { path: 'login'   , component: LoginComponent },
   { path: 'inicio', component: InicioComponent},
