@@ -7,7 +7,8 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { DataService } from './../app/services/data-db.service';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown'
+
+
 
 
 
@@ -24,6 +25,11 @@ import { ProductosComponent} from './pages/productos/productos.component';
 import { HabitacionalComponent } from './pages/habitacional/habitacional.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { PdfComponent } from './pages/pdf/pdf.component';
+import { UltimopasoComponent } from './pages/ultimopaso/ultimopaso.component';
+import { FotosComponent } from './components/fotos/fotos.component';
+import { CargaComponent } from './components/carga/carga.component';
+import { CargaImagenesService } from './services/carga-imagenes.service';
+import { NgDropFilesDirective } from './directives/ng-drop-files.directive';
 
 
 
@@ -43,6 +49,10 @@ import { PdfComponent } from './pages/pdf/pdf.component';
     HabitacionalComponent,
     ContactComponent,
     PdfComponent,
+    UltimopasoComponent,
+    FotosComponent,
+    CargaComponent,
+    NgDropFilesDirective,
 
     
   ],
@@ -54,11 +64,12 @@ import { PdfComponent } from './pages/pdf/pdf.component';
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFirestoreModule,
     ReactiveFormsModule,
-    NgMultiSelectDropDownModule.forRoot(),
+    
+
 
 
     ],
-  providers: [ DataService ],
+  providers: [ DataService, CargaImagenesService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

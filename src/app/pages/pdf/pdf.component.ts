@@ -2,6 +2,8 @@ import { Component } from '@angular/core';
 import pdfMake from 'pdfmake/build/pdfmake';
 import pdfFonts from 'pdfmake/build/vfs_fonts';
 import { Resume, Experience, Education, Skill } from '../Models/resume/resume.component';
+import Swal from 'sweetalert2';
+import { NgForm } from '@angular/forms';
 pdfMake.vfs = pdfFonts.pdfMake.vfs;
 @Component({
   selector: 'app-root',
@@ -41,6 +43,7 @@ export class PdfComponent {
       default: pdfMake.createPdf(documentDefinition).open(); break;
     }
   }
+
   resetForm() {
     this.resume = new Resume();
   }
